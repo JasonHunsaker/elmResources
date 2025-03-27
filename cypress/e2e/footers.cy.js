@@ -1,0 +1,35 @@
+describe('elmResources footer tests', () => {
+    it('visits elmResources & checks the footers navigate correctly', () => {
+        cy.visit('https://www.elmresources.com');
+        cy.get('#comp-kfe12auw > .font_8 > a.wixui-rich-text__text > .wixui-rich-text__text').click();
+        cy.url().should('contain', '/about-us');
+        cy.get('#comp-kfe132e3').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/elm-blog');
+        cy.get('#comp-kfe138h0').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/careers');
+        cy.get('#comp-kfe13tbm').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/leadership-team');
+        cy.get('#comp-kfe1475p').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/members-affiliates');
+        cy.get('#comp-lm98ggqs').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/general-7');
+        cy.get('#comp-kfe1tpxt1').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', 'elm-one');
+        cy.get('#comp-kfe1tpxu2').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', 'elm-select');        
+        cy.get('#comp-kfwm1nt3').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/schools');
+        cy.get('#comp-kfwm1nt5').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/lenders');
+        cy.get('#comp-kfwm34vd').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/students');
+        cy.get('#comp-kfe14oq91').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/terms-conditions');
+        cy.get('#comp-kfe14oqa3').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/privacy');
+        cy.get('#comp-kfe14w38').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', '/contact-us');
+        cy.get('#comp-kfe14w391').find('.wixui-rich-text__text').eq(1).click();
+        cy.url().should('contain', 'service-team');
+    });
+});
