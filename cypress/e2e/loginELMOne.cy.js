@@ -31,6 +31,7 @@ it('checks the elmone login page & tries to login', () => {
         expect(intercept.request.body.password).to.eq(password);
         expect(intercept.request.body.username).to.eq(user);
     });
+    //error screen should show
     cy.get(`[ng-show="authenticationService.displayDefaultErrorMessage && flows[currentFlow][currentFlowStep] === 'login'"] > .row`)
         .should('contain.text', 'Credentials provided could not be verified.')
         .and('contain.text', 'You may have typed your credentials incorrectly.')
