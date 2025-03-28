@@ -6,8 +6,7 @@ module.exports = defineConfig({
   viewportWidth: 1920,
   viewportHeight: 1080,
   watchForFileChanges: false,
-  blockHosts: 'https://panorama.wixapps.net/api/v1/bulklog',
-  // reporter: 'cypress-mochawesome-reporter',
+  blockHosts: 'https://panorama.wixapps.net',
   retries: {
       runMode: 3,
       openMode: 0,

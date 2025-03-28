@@ -1,5 +1,6 @@
-let user = 'Cypress';
-let password = 'Password';
+const user = 'Cypress';
+const password = 'Password';
+
 it('checks the elmone login page & tries to login', () => {
     //check display
     cy.visit('https://www.elmone.com/ui/login/#/');

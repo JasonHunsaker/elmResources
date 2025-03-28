@@ -1,5 +1,5 @@
-let sizes = ['iphone-se2', 'ipad-2', 'macbook-15', 'samsung-note9'];
-let school = 'Florida State';
+const sizes = ['iphone-se2', 'ipad-2', 'macbook-15', 'samsung-note9'];
+const school = 'Florida State';
 
 it('checks the ELMSelect workflow on various devices', () => {
     sizes.forEach((size) => {
