@@ -19,6 +19,7 @@ it('checks the elmone login page & tries to login', () => {
     cy.get('[ng-click="openPrivacyModal()"]').should('be.visible').and('not.be.disabled');
     cy.get(':nth-child(1) > .col12').should('be.visible').and('contain.text', 'If you need assistance, please contact our National Service Center via web chat, email or phone (866) 524-8198.');
     cy.get('.ng-binding').should('be.visible').and('have.text', 'ELMONE© is a Product of ELM Resources ©2025 | Terms of Use | Privacy Policy');
+    
     //check login
     cy.get('[ng-show="!authenticationService.isLoginDataLoading()"] > :nth-child(2) > .form-control').type(user);
     cy.get('[ng-show="!authenticationService.isLoginDataLoading()"] > :nth-child(3) > .form-control').type(password);
@@ -36,5 +37,5 @@ it('checks the elmone login page & tries to login', () => {
         .and('contain.text', 'Your account may have expired due to inactivity.')
         .and('contain.text', 'Your account may be locked due to multiple invalid authentication attempts.')
         .and('contain.text', 'If you believe you have received this message in error, please retry your credentials.')
-        .and('contain.text', 'To recover your account, you may use the "Forgot your password?" link below.')
+        .and('contain.text', 'To recover your account, you may use the "Forgot your password?" link below.');
 });
