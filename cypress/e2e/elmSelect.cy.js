@@ -1,12 +1,17 @@
 const sizes = ['iphone-se2', 'ipad-2', 'macbook-15', 'samsung-note9'];
-const school = 'Florida State';
+const school = 'Florida State University';
 
 it('checks the ELMSelect workflow on various devices', () => {
     sizes.forEach((size) => {
         cy.viewport(size);
         cy.visit('https://www.elmselect.com/v4/');
-        cy.get('#autoCompleteControl').type('florida state university');
-        cy.get('[title="Florida State University"]').click();
+        cy.get('#autoCompleteControl').type(school);
+        cy.intercept('GET', 'https://www.elmselect.com/api/schools/899').as('loadFSU');
+        cy.get(`[title="${school}"]`).click();
+        cy.wait('@loadFSU').then((intercept) => {
+            expect(intercept.response.statusCode).to.eq(200);
+            expect(intercept.response.body.schoolName).to.eq(school);
+        })
         cy.get('.school-info-header').should('contain.text', school);
         cy.get('#mat-select-0').click();
         cy.contains('.mat-option-text', 'Graduate').click();
